@@ -44,15 +44,15 @@
   {
     "id": "investment-001",
     "section": "개인 투자용",
-    "title": "AI를 활용한 기업 실적 자료 구조화",
-    "description": "실적 발표 자료와 공시 문서를 읽을 때 핵심 지표, 위험 요인, 질문 목록을 정리하는 방법입니다.",
-    "tags": ["중급", "리서치", "재무제표"],
+    "title": "나박AI 고래추적기",
+    "description": "큰손이 뭘 샀는지 추적한다.",
+    "tags": ["중급", "리서치", "주식", "투자"],
     "level": "중급",
-    "type": "실습",
-    "duration": "30분",
-    "url": "https://example.com",
+    "type": "리포트",
+    "duration": "웹페이지",
+    "url": "https://www.nabakai.com/",
     "recommended": true,
-    "updatedAt": "2026-08-27",
+    "updatedAt": "2026-09-05",
     "status": "published"
   },
   {
