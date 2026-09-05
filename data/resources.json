@@ -124,5 +124,19 @@
     "recommended": false,
     "updatedAt": "2026-08-27",
     "status": "published"
+  },
+  {
+    "id": "employee-001",
+    "section": "직원 창작물",
+    "title": "팬오션 주가 분석 보고서 (최지민 책임)",
+    "description": "외부 API 데이터로 자동 생성하는 팬오션 주가 분석 보고서",
+    "tags": ["팬오션", "주가 분석", "직원 창작물"],
+    "level": "중급",
+    "type": "리포트",
+    "duration": "-",
+    "url": "https://panpanda.netlify.app/",
+    "recommended": true,
+    "updatedAt": "2026-08-27",
+    "status": "published"
   }
 ]
