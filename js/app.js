@@ -2,11 +2,12 @@ const SECTION_ORDER = Object.freeze([
   "업무 활용",
   "개인 투자용",
   "흥미·자기계발",
-  "최근 AI 트렌드"
+  "최근 AI 트렌드",
+  "직원 창작물"
 ]);
 
 /**
- * @typedef {"업무 활용" | "개인 투자용" | "흥미·자기계발" | "최근 AI 트렌드"} AllowedSection
+ * @typedef {"업무 활용" | "개인 투자용" | "흥미·자기계발" | "최근 AI 트렌드" | "직원 창작물"} AllowedSection
  */
 
 /**
@@ -450,7 +451,7 @@ function validateResourceEntries(entries) {
   });
 }
 
-// 분야 옵션은 데이터에서 확장하지 않고 전체 값과 고정 네 섹션만 제공한다.
+// 분야 옵션은 데이터에서 확장하지 않고 전체 값과 고정 다섯 섹션만 제공한다.
 const SECTION_FILTER_OPTIONS = Object.freeze(["all", ...SECTION_ORDER]);
 
 /**
@@ -683,7 +684,7 @@ function resetQueryState() {
 }
 
 /**
- * 선택 결과를 고정 네 섹션에 입력 순서대로 한 번씩 배치한다.
+ * 선택 결과를 고정 다섯 섹션에 입력 순서대로 한 번씩 배치한다.
  * 유효 모델 밖의 섹션 값은 새 그룹을 만들지 않는다.
  */
 function groupByFixedSection(resources) {
@@ -761,7 +762,15 @@ const EMPTY_FILTER_OPTIONS = Object.freeze({
   difficulties: Object.freeze([]),
   resourceTypes: Object.freeze([])
 });
-const DEFAULT_RESOURCE_URL = "data/resources.json";
+const PRODUCTION_RESOURCE_URL =
+  "https://youngrongs.github.io/PANDA-DASHBOARD/data/resources.json";
+const BROWSER_TEST_RESOURCE_URL_OVERRIDE =
+  typeof globalThis.__PANDA_DASHBOARD_BROWSER_TEST_RESOURCE_URL__ === "string" &&
+  globalThis.__PANDA_DASHBOARD_BROWSER_TEST_RESOURCE_URL__ !== ""
+    ? globalThis.__PANDA_DASHBOARD_BROWSER_TEST_RESOURCE_URL__
+    : null;
+const DEFAULT_RESOURCE_URL =
+  BROWSER_TEST_RESOURCE_URL_OVERRIDE || PRODUCTION_RESOURCE_URL;
 
 function escapeHtml(value) {
   const text = String(value ?? "");
@@ -865,7 +874,8 @@ const SECTION_HEADING_IDS = Object.freeze({
   "업무 활용": "workSectionHeading",
   "개인 투자용": "investmentSectionHeading",
   "흥미·자기계발": "growthSectionHeading",
-  "최근 AI 트렌드": "trendSectionHeading"
+  "최근 AI 트렌드": "trendSectionHeading",
+  "직원 창작물": "employeeCreationSectionHeading"
 });
 
 /**
@@ -1039,10 +1049,6 @@ function createResourceSection(
   const matchingResources = resources.filter(
     (resource) => resource?.section === sectionName
   );
-
-  if (matchingResources.length === 0) {
-    return null;
-  }
 
   const section = documentRef.createElement("section");
   const headingId = SECTION_HEADING_IDS[sectionName];
@@ -1368,7 +1374,7 @@ async function loadResourceDocument(
   requestSignal,
   fetchImplementation = fetch
 ) {
-  const requestOptions = { method: "GET" };
+  const requestOptions = { cache: "no-store", method: "GET" };
 
   if (requestSignal !== undefined) {
     requestOptions.signal = requestSignal;

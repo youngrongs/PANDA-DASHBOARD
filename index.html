@@ -7,19 +7,6 @@
     name="viewport"
     content="width=device-width, initial-scale=1.0"
   />
-  <header class="site-header">
-  <div class="container">
-    <img
-      class="header-image"
-      src="images/PANDA.jpg"
-      alt="AI 동호회 로고"
-      width="720"
-      height="360"
-    />
-
-  </div>
-</header>
-
   <title> 팬오션 AI 연구·활용 동호회 PANDA 대시보드</title>
  
   <link rel="stylesheet" href="css/style.css" />
@@ -28,10 +15,17 @@
 <body>
   <header class="site-header">
     <div class="container">
+      <img
+        class="header-image"
+        src="images/PANDA.jpg"
+        alt="AI 동호회 로고"
+        width="720"
+        height="360"
+      />
       <p class="eyebrow">AI Research & Practice Club</p>
       <h1> 팬오션 AI 연구·활용 동호회 PANDA 대시보드</h1>
       <p class="header-description">
-        업무 활용, 투자 리서치, 창작·자기계발, 최신 AI 트렌드를 한곳에서 확인합니다.
+        업무 활용, 투자 리서치, 창작·자기계발, 최신 AI 트렌드와 직원 창작물을 한곳에서 확인합니다.
       </p>
     </div>
   </header>
@@ -78,6 +72,7 @@
                 <option value="개인 투자용">개인 투자용</option>
                 <option value="흥미·자기계발">흥미·자기계발</option>
                 <option value="최근 AI 트렌드">최근 AI 트렌드</option>
+                <option value="직원 창작물">직원 창작물</option>
               </select>
             </div>
 
@@ -167,6 +162,16 @@
         <section class="content-section" aria-labelledby="trendSectionHeading">
           <div class="section-heading">
             <h3 id="trendSectionHeading">최근 AI 트렌드</h3>
+          </div>
+          <div class="resource-grid"></div>
+        </section>
+
+        <section
+          class="content-section"
+          aria-labelledby="employeeCreationSectionHeading"
+        >
+          <div class="section-heading">
+            <h3 id="employeeCreationSectionHeading">직원 창작물</h3>
           </div>
           <div class="resource-grid"></div>
         </section>
