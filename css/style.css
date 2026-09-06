@@ -12,6 +12,7 @@
   --color-tag-bg: #f3f4f6;
   --color-recommended-bg: #fef3c7;
   --color-recommended-text: #92400e;
+  --container-gutter: clamp(1rem, 3vw, 2rem);
   --max-width: 1180px;
 }
 
@@ -40,9 +41,17 @@ body {
 }
 
 .container {
-  inline-size: min(var(--max-width), calc(100% - 2rem));
-  max-inline-size: 100%;
+  box-sizing: border-box;
+  inline-size: 100%;
+  max-inline-size: var(--max-width);
+  min-inline-size: 0;
   margin-inline: auto;
+  padding-inline-start: calc(
+    var(--container-gutter) + env(safe-area-inset-left, 0px)
+  );
+  padding-inline-end: calc(
+    var(--container-gutter) + env(safe-area-inset-right, 0px)
+  );
 }
 
 main,
@@ -65,10 +74,12 @@ section,
 input,
 select,
 button {
+  min-inline-size: 0;
   max-inline-size: 100%;
 }
 
 :is(a, button, input, select):focus-visible {
+  scroll-margin-block: 6px;
   outline: 3px solid var(--color-focus);
   outline-offset: 3px;
 }
@@ -81,8 +92,10 @@ button {
 
 .header-image {
   display: block;
-  max-inline-size: 100%;
+  inline-size: 100%;
+  max-inline-size: 720px;
   block-size: auto;
+  aspect-ratio: 2 / 1;
 }
 
 .eyebrow {
