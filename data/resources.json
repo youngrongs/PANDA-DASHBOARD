@@ -2,15 +2,15 @@
   {
     "id": "work-001",
     "section": "업무 활용",
-    "title": "(SAMPLE, 내용없음) AI로 회의록 정리하기",
-    "description": "회의 메모나 녹취 내용을 핵심 논의, 담당자, 일정, 후속 조치 중심으로 정리하는 실습 자료입니다.",
-    "tags": ["초급", "업무자동화", "프롬프트"],
+    "title": "AI 프롬프트 사이트 (드랩아트)",
+    "description": "AI 프롬프트 작성 팁 사이트 모음",
+    "tags": ["초급", "프롬프트"],
     "level": "초급",
     "type": "실습",
-    "duration": "20분",
-    "url": "https://example.com",
-    "recommended": true,
-    "updatedAt": "2026-08-27",
+    "duration": "-",
+    "url": "https://draph.art/ko/blog/marketing/ai_prompt_sites_beginner_guide_7",
+    "recommended": false,
+    "updatedAt": "2026-09-06",
     "status": "published"
   },
   {
