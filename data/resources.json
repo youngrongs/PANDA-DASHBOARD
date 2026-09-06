@@ -97,6 +97,20 @@
     "updatedAt": "2026-09-05",
     "status": "published"
   },
+    {
+    "id": "youtube-003",
+    "section": "흥미·자기계발",
+    "title": "바이브코딩을 위한 IT 필수 지식",
+    "description": "컴퓨터구조, 소프트웨어공학, 네트워크, 서버, 클라우드 등",
+    "tags": ["유튜브", "바이브코딩", "IT필수지식"],
+    "level": "초급",
+    "type": "영상",
+    "duration": "17분 58초",
+    "url": "https://youtu.be/2vnr5g4DFqU?si=Hfqty-nJ2fG2gcqX",
+    "recommended": true,
+    "updatedAt": "2026-09-06",
+    "status": "published"
+  },
   {
     "id": "trend-001",
     "section": "최근 AI 트렌드",
